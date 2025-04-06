@@ -1,0 +1,16 @@
+class Solution {
+    public static boolean isPerfect(int[] arr) {
+        // code here
+        boolean isPalindrome = false;
+        int start = 0;
+        int end = arr.length-1;
+        while(start <= end && arr[start] == arr[end]){
+            start++;
+            end--;
+        }
+        if(start > end){
+            isPalindrome = true;
+        }
+        return isPalindrome;
+    }
+}
