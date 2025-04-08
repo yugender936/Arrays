@@ -1,0 +1,18 @@
+class Solution {
+    public List<Integer> findEvenOccurrences(int[] arr) {
+        // code here
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+        ArrayList<Integer> result = new ArrayList<>();
+        
+        for (int num : arr) {
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+        }
+        
+         for (int nums : arr) {
+                 if(frequencyMap.get(nums) % 2 == 0 && !result.contains(nums)){
+                     result.add(nums);
+                 }
+        }
+        return result.isEmpty() ? Arrays.asList(-1) : result;
+    }
+}
