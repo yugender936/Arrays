@@ -1,0 +1,25 @@
+class Solution {
+    public int countFibonacciNumbers(long[] arr) {
+        // code here
+        int count = 0;
+        for(long num : arr){
+            if(isFibo(num)){
+                count++;
+            }
+        }
+        return count;
+    }
+    public boolean isFibo(long n){
+       
+       long first = 0;
+       long second = 1;
+       long fib = 0;
+       while(fib < n){
+           fib = first+second;
+           first = second;
+           second = fib;
+       }
+       return (fib == n) ?true:false;
+    }
+    
+}
