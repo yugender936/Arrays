@@ -1,0 +1,28 @@
+class Solution {
+    public String winner(int[] arr, int m, int n) {
+        // code here
+        int i = 0;
+        int ramCount = 0;
+        int rohanCount = 0;
+        while(i < arr.length){
+            boolean isEnter = false;
+            while(i < arr.length && arr[i]%m == 0){
+                
+                ramCount++;
+                i++;
+                isEnter = true;
+            }
+            while(i < arr.length && arr[i]%n == 0){
+                
+                rohanCount++;
+                i++;
+                isEnter = true;
+            }
+           if(isEnter == false){
+               i++;
+           }
+        }
+       
+        return ramCount>rohanCount ? "Ram":(ramCount == rohanCount)?"Both":"Rohan";
+    }
+}
