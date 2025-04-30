@@ -1,0 +1,31 @@
+class Solution {
+    public String countryAtWar(int[] arr1, int[] arr2) {
+        //  code here
+        //if(arr1.length > )
+        int aCount = 0;
+        int bCount = 0;
+        
+        int i = 0;
+        int j = 0;
+        while(i < arr1.length && j < arr2.length){
+            if(arr1[i] > arr2[j]){
+                aCount++;
+            }
+            if(arr1[i] < arr2[j]){
+                bCount++;
+            }
+            i++;
+            j++;
+        }
+        while(i < arr1.length){
+            aCount++;
+            i++;
+        }
+        while(j < arr2.length){
+            bCount++;
+            j++;
+        }
+        
+       return aCount>bCount ? "A":(aCount == bCount)?"DRAW":"B";
+    }
+}
