@@ -1,0 +1,36 @@
+class Solution {
+    public boolean isCheck(int n){
+        if(n <= 9){
+            return false;
+        }
+        
+        int prev = n%10;
+        n = n/10;
+        int diff = 0;
+        
+        while(n > 0){
+            int rem = n%10;
+            diff = Math.abs(prev-rem);
+            if(diff != 1){
+                return false;
+            }
+            prev = rem;
+            n = n/10;
+        }
+        return true;
+    }
+    public ArrayList<Integer> getDigitDiff1AndLessK(int[] arr, int k) {
+        // code here
+        
+        ArrayList<Integer> nums = new ArrayList<Integer>();
+        
+        for(int num : arr){
+            if(num < k && isCheck(num)){
+                nums.add(num);
+            }
+        }
+        
+        return nums;
+        
+    }
+}
