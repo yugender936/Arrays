@@ -1,0 +1,17 @@
+class Solution {
+    public int[] dupLastIndex(int[] arr) {
+        // Complete the function
+        HashSet<Integer> set = new HashSet<>();
+        int last = -1;
+        int element = -1;
+        for(int i = 0 ; i < arr.length ; i++){
+            if(!set.add(arr[i])){
+                last = i;
+                element = arr[i];
+            }
+        }
+        
+        int[] arr1 = {last,element};
+        return arr1;
+    }
+}
