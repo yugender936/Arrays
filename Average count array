@@ -1,0 +1,22 @@
+class Solution {
+
+    // Function for finding maximum and value pair
+    public ArrayList<Integer> countArray(int[] arr, int x) {
+        // Complete the function
+       ArrayList<Integer> result = new ArrayList<>();
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+
+        
+        for (int num : arr) {
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+        }
+
+        
+        for (int num : arr) {
+            int floorAvg = (num + x) / 2;
+            result.add(frequencyMap.getOrDefault(floorAvg, 0));
+        }
+
+        return result;
+    }
+}
